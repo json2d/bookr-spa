@@ -10,10 +10,16 @@
 </template>
 
 <script>
-import Toolbar from "@/components/Toolbar"
+import Toolbar from '@/components/Toolbar'
 export default {
   name: 'App',
-  components: {Toolbar}
+  components: { Toolbar },
+  computed: {
+    token() {
+      console.log(this.$store.state)
+      return this.$store.state.auth.token
+    }
+  }
 }
 </script>
 

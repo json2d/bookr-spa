@@ -22,13 +22,13 @@
 </template>
 
 <script>
-import LeftDrawer from "@/components/LeftDrawer"
+import LeftDrawer from '@/components/LeftDrawer'
 export default {
   name: 'Toolbar',
-  components: {LeftDrawer},
+  components: { LeftDrawer },
   data: () => ({
-    showDialog: true,
-    showNavigation: true,
+    showDialog: false,
+    showNavigation: false
   })
 }
 </script>

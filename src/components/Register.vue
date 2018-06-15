@@ -1,13 +1,14 @@
 <template>
     <md-content>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum magnam, similique, quo recusandae placeat dicta asperiores modi sint ea repudiandae maxime? Quae non explicabo, neque.
+      <Form/>
     </md-content>
 </template>
 
 <script>
+import Form from './Form'
 export default {
   name: 'Register',
-  components: {},
+  components: { Form },
   data: () => ({})
 }
 </script>

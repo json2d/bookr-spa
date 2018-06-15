@@ -1,7 +1,7 @@
 <template>
   <div>
     <md-toolbar class="md-transparent" md-elevation="0">
-      <span class="md-title">My App name</span>
+      <span class="md-title">{{token}}</span>
     </md-toolbar>
 
     <md-list>
@@ -31,7 +31,11 @@
 <script>
 export default {
   name: 'LeftDrawer',
-  data: () => ({})
+  computed: {
+    token() {
+      return this.$store.state.auth.token
+    }
+  }
 }
 </script>
 
