@@ -1,13 +1,19 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
-  </div>
+  <!-- <div id="app"> -->
+    <!-- <img src="./assets/logo.png"> -->
+
+    <div class="page-container md-layout-column">
+      <Toolbar />
+      <router-view/>
+    </div>
+  <!-- </div> -->
 </template>
 
 <script>
+import Toolbar from "@/components/Toolbar"
 export default {
-  name: 'App'
+  name: 'App',
+  components: {Toolbar}
 }
 </script>
 
