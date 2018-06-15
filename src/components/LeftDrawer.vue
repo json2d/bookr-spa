@@ -6,23 +6,23 @@
 
     <md-list>
       <md-list-item>
-        <md-icon>move_to_inbox</md-icon>
-        <span class="md-list-item-text">Inbox</span>
+        <md-icon>home</md-icon>
+        <span class="md-list-item-text">My Books</span>
       </md-list-item>
 
       <md-list-item>
-        <md-icon>send</md-icon>
-        <span class="md-list-item-text">Sent Mail</span>
+        <md-icon>search</md-icon>
+        <span class="md-list-item-text">Search for Books</span>
       </md-list-item>
 
       <md-list-item>
         <md-icon>delete</md-icon>
-        <span class="md-list-item-text">Trash</span>
+        <span class="md-list-item-text">Browse Categories</span>
       </md-list-item>
 
       <md-list-item>
-        <md-icon>error</md-icon>
-        <span class="md-list-item-text">Spam</span>
+        <md-icon>settings</md-icon>
+        <span class="md-list-item-text">Settings</span>
       </md-list-item>
     </md-list>
   </div>

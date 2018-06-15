@@ -5,10 +5,12 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    books: {},
+    books: null,
+    contributed: null,
     auth: {
-      token: '123123123123'
+      token: null
     }
+
   },
   mutations: {
     addBooks (books) {

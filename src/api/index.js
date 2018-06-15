@@ -1,35 +1,44 @@
-/**
- * Mocking client-server processing
- */
-const _products = [
-  { id: 1, title: 'iPad 4 Mini', price: 500.01, inventory: 2 },
-  { id: 2, title: 'H&M T-Shirt White', price: 10.99, inventory: 10 },
-  { id: 3, title: 'Charli XCX - Sucker CD', price: 19.99, inventory: 5 }
-]
-
+const API = "https://bookr-api-alpha.herokuapp.com"
 export const signup = (creds, cb) => {
-  console.log(creds)
-  // var data = new FormData();
-  // data.append( "json", JSON.stringify( creds ) );
 
-  fetch('https://bookr-api-alpha.herokuapp.com/auth/signup', {
+  fetch(API+'/auth/signup', {
     method: 'POST',
     mode: 'cors',
     headers: {
-      'Accept': 'application/json, text/plain, */*',
-      'Content-Type': 'application/json'
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(creds)
   })
-  .then(res => res.json())
-  .then(cb)
+    .then(res => res.json())
+    .then(cb)
 }
 
-export const buyProducts = (products, cb, errorCb) => {
-  setTimeout(() => {
-    // simulate random checkout failure.
-    Math.random() > 0.5 || navigator.userAgent.indexOf('PhantomJS') > -1
-      ? cb()
-      : errorCb()
-  }, 100)
+export const allBooks = (token, cb) => {
+
+  fetch(API+'/books', {
+    method: 'GET',
+    mode: 'cors',
+    headers: {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer '+token
+    },
+  })
+    .then(res => res.json())
+    .then(cb)
+}
+
+export const contributedBooks = async (cb) => {
+
+  fetch(API+'/books/contributed', {
+    method: 'GET',
+    mode: 'cors',
+    headers: {
+      Accept: 'application/json, text/plain, */*',
+      'Content-Type': 'application/json'
+    },
+  })
+    .then(res => res.json())
+    .then(cb)
 }
